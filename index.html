@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paulina & Julio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="container">
+        <h1>Paulina & Julio</h1>
+        <img src="imagen-boda.jpg" alt="Paulina y Julio" class="imagen-boda">
+        <p>Gracias por ser parte de este momento especial.</p>
+        <p>Puedes ver nuestra lista de regalos en las siguientes opciones:</p>
+        <div class="buttons">
+            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51606936" target="_blank" class="button">Mesa de regalos Liverpool</a>
+            <a href="https://www.mercadolibre.com.mx" target="_blank" class="button">Mesa de regalos MercadoLibre</a>
+            <a href="#datos-bancarios" class="button" onclick="mostrarDatos()">Datos para transferencia</a>
+        </div>
+        <div id="datos-bancarios" class="datos-ocultos">
+            <p><strong>Datos bancarios:</strong><br>
+            Nombre: Paulina [Tu Apellido] / Julio [Tu Apellido]<br>
+            Banco: [Nombre del banco]<br>
+            Cuenta: [Número de cuenta]<br>
+            CLABE: [CLABE interbancaria]</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarDatos() {
+            const datos = document.getElementById("datos-bancarios");
+            if (datos.style.display === "block") {
+                datos.style.display = "none";
+            } else {
+                datos.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

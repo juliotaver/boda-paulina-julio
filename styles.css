@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f8f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 48px;
+    color: #7a7f32;
+    font-family: "Playfair Display", serif; /* Fuente para Paulina & Julio */
+}
+
+p {
+    font-size: 18px;
+    color: #818181;
+    margin: 10px 0;
+    font-family: "Raleway", sans-serif; /* Fuente para los párrafos */
+}
+
+/* Resto del CSS (botones, anillos, etc.) sigue igual */
+
+.imagen-boda {
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #aab87c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #7c865a;
+}
+
+.datos-ocultos {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+    color: #818181;
+}
+
+/* Estilo para los anillos flotantes */
+.ring {
+    position: absolute;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 6s infinite ease-in-out;
+    z-index: 1; /* Los anillos debajo del contenedor */
+}
+
+.ring:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    top: 10%;
+    left: 10%; /* Ajustamos para que no choque con el contenedor */
+    animation-delay: 0s;
+}
+
+.ring:nth-child(2) {
+    width: 70px;
+    height: 70px;
+    top: 20%;
+    left: 75%; /* Reposicionamos para que sea visible */
+    animation-delay: 2s;
+}
+
+.ring:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    top: 70%;
+    left: 20%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+
+.ring:nth-child(4) {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    left: 20%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+.ring:nth-child(5) {
+    width: 40px;
+    height: 40px;
+    top: 40%;
+    left: 30%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+.ring:nth-child(6) {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 900%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+.ring:nth-child(7) {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    left: 60%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+.ring:nth-child(8) {
+    width: 40px;
+    height: 40px;
+    top: 80%;
+    left: 50%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+.ring:nth-child(9) {
+    width: 40px;
+    height: 40px;
+    top: 90%;
+    left: 40%; /* Reposicionamos para que no quede detrás */
+    animation-delay: 4s;
+}
+
+
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
