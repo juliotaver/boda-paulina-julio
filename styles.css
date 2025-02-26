@@ -159,6 +159,30 @@ p {
     animation-delay: 4s;
 }
 
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-family: "Raleway", sans-serif;
+    color: #818181;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
 /* Animación de flotación */
 @keyframes float {
     0% {
@@ -186,5 +210,11 @@ p {
     }
     .imagen-boda {
         max-width: 80%; /* Imagen más pequeña en celulares */
+    }
+    .products-grid {
+        grid-template-columns: 1fr; /* Una columna en celulares */
+    }
+    .product-name {
+        font-size: 14px;
     }
 }
