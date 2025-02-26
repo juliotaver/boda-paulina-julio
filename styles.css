@@ -4,39 +4,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    overflow: hidden;
+    min-height: 100vh; /* Cambiamos a min-height para permitir crecimiento */
+    overflow: auto; /* Permitimos scroll si el contenido excede */
     position: relative;
 }
 
 .container {
     text-align: center;
     background-color: white;
-    padding: 40px;
+    padding: 20px; /* Reducimos padding para pantallas pequeñas */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
+    max-width: 90%; /* Ajustamos a un porcentaje para responsividad */
+    width: 400px; /* Ancho base, pero flexible */
+    margin: 20px auto; /* Centrado con margen */
 }
 
 h1 {
     font-size: 48px;
     color: #7a7f32;
-    font-family: "Playfair Display", serif; /* Fuente para Paulina & Julio */
+    font-family: "Playfair Display", serif;
+    word-break: break-word; /* Permite romper palabras si es necesario */
+    line-height: 1.2; /* Mejora la legibilidad */
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px; /* Reducimos tamaño para pantallas pequeñas */
     color: #818181;
     margin: 10px 0;
-    font-family: "Raleway", sans-serif; /* Fuente para los párrafos */
+    font-family: "Raleway", sans-serif;
 }
 
-/* Resto del CSS (botones, anillos, etc.) sigue igual */
-
 .imagen-boda {
-    max-width: 300px;
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
     height: auto;
     margin: 20px 0;
     border-radius: 10px;
@@ -44,22 +47,28 @@ p {
 
 .buttons {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Apila botones verticalmente en pantallas pequeñas */
+    gap: 10px; /* Espacio entre botones */
 }
 
 .button {
     display: inline-block;
-    padding: 15px 30px;
-    margin: 10px;
-    background-color: #aab87c;
+    padding: 12px 20px; /* Reducimos padding para botones */
+    margin: 5px 0;
+    background-color: #ff6f61;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px; /* Reducimos tamaño de fuente */
     transition: background-color 0.3s;
+    width: 80%; /* Ancho relativo */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button:hover {
-    background-color: #7c865a;
+    background-color: #e65b50;
 }
 
 .datos-ocultos {
@@ -74,79 +83,50 @@ p {
     position: absolute;
     border: 2px solid #d4af37;
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.5;
     animation: float 6s infinite ease-in-out;
-    z-index: 1; /* Los anillos debajo del contenedor */
+    z-index: 1;
 }
 
 .ring:nth-child(1) {
     width: 50px;
     height: 50px;
-    top: 10%;
-    left: 10%; /* Ajustamos para que no choque con el contenedor */
+    top: 5%;
+    left: 5%;
     animation-delay: 0s;
 }
 
 .ring:nth-child(2) {
     width: 70px;
     height: 70px;
-    top: 20%;
-    left: 75%; /* Reposicionamos para que sea visible */
+    top: 15%;
+    left: 70%;
     animation-delay: 2s;
 }
 
 .ring:nth-child(3) {
     width: 40px;
     height: 40px;
-    top: 70%;
-    left: 20%; /* Reposicionamos para que no quede detrás */
+    top: 60%;
+    left: 10%;
     animation-delay: 4s;
 }
 
 .ring:nth-child(4) {
-    width: 40px;
-    height: 40px;
-    top: 30%;
-    left: 20%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
-}
-.ring:nth-child(5) {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     top: 40%;
-    left: 30%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
-}
-.ring:nth-child(6) {
-    width: 40px;
-    height: 40px;
-    top: 50%;
-    left: 900%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
-}
-.ring:nth-child(7) {
-    width: 40px;
-    height: 40px;
-    top: 60%;
-    left: 60%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
-}
-.ring:nth-child(8) {
-    width: 40px;
-    height: 40px;
-    top: 80%;
-    left: 50%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
-}
-.ring:nth-child(9) {
-    width: 40px;
-    height: 40px;
-    top: 90%;
-    left: 40%; /* Reposicionamos para que no quede detrás */
-    animation-delay: 4s;
+    left: 80%;
+    animation-delay: 1s;
 }
 
-
+.ring:nth-child(5) {
+    width: 45px;
+    height: 45px;
+    top: 75%;
+    left: 25%;
+    animation-delay: 3s;
+}
 
 /* Animación de flotación */
 @keyframes float {
@@ -158,5 +138,22 @@ p {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px; /* Reducimos tamaño del título en celulares */
+    }
+    p {
+        font-size: 14px; /* Ajustamos texto */
+    }
+    .button {
+        font-size: 12px; /* Botones más pequeños */
+        padding: 10px 15px;
+    }
+    .imagen-boda {
+        max-width: 80%; /* Imagen más pequeña en celulares */
     }
 }
