@@ -189,6 +189,37 @@ p {
     word-break: break-word; /* Permite romper palabras si es necesario */
 }
 
+.reserve-btn {
+    padding: 10px 20px;
+    background-color: #aab87c; /* Mismo color que los botones principales */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+    background-color: #7c865a; /* Mismo hover que los botones principales */
+}
+
+.reserve-btn:disabled {
+    background-color: #ccc; /* Gris cuando está reservado */
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Ajuste para la notificación */
+.notification {
+    font-family: "Raleway", sans-serif;
+    color: #818181;
+    font-size: 14px;
+    margin: 10px 0;
+    font-style: italic;
+}
+
 /* Animación de flotación */
 @keyframes float {
     0% {
